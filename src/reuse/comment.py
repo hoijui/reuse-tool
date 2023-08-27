@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2020 Dmitry Bogatov
 # SPDX-FileCopyrightText: 2021-2022 Alliander N.V. <https://alliander.com>
 # SPDX-FileCopyrightText: 2021 Alvar Penning
-# SPDX-FileCopyrightText: 2021 Robin Vobruba <hoijui.quaero@gmail.com>
+# SPDX-FileCopyrightText: 2021-2023 Robin Vobruba <hoijui.quaero@gmail.com>
 # SPDX-FileCopyrightText: 2021 Matija Šuklje <matija@suklje.name>
 # SPDX-FileCopyrightText: 2022 Florian Snow <florian@familysnow.net>
 # SPDX-FileCopyrightText: 2022 Nico Rikken <nico.rikken@fsfe.org>
@@ -493,6 +493,8 @@ class XQueryCommentStyle(CommentStyle):
 
 #: A map of (common) file extensions against comment types.
 EXTENSION_COMMENT_STYLE_MAP = {
+    ".7z": UncommentableCommentStyle,
+    ".a": UncommentableCommentStyle,
     ".adb": HaskellCommentStyle,
     ".adoc": CCommentStyle,
     ".ads": HaskellCommentStyle,
@@ -509,6 +511,7 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".asmx": AspxCommentStyle,
     ".aspx": AspxCommentStyle,
     ".aux": TexCommentStyle,
+    ".avi": UncommentableCommentStyle,
     ".awk": PythonCommentStyle,
     ".axd": AspxCommentStyle,
     ".bash": PythonCommentStyle,
@@ -517,7 +520,11 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".bbappend": PythonCommentStyle,
     ".bbclass": PythonCommentStyle,
     ".bib": BibTexCommentStyle,
+    ".bin": UncommentableCommentStyle,
+    ".bmp": UncommentableCommentStyle,
+    ".bz2": UncommentableCommentStyle,
     ".c": CCommentStyle,
+    ".cab": UncommentableCommentStyle,
     ".cc": CCommentStyle,
     ".cjs": CCommentStyle,
     ".cl": LispCommentStyle,
@@ -535,6 +542,7 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".cxx": CCommentStyle,
     ".d": CCommentStyle,
     ".dart": CCommentStyle,
+    ".deb": UncommentableCommentStyle,
     ".di": CCommentStyle,
     ".doc": UncommentableCommentStyle,
     ".docx": UncommentableCommentStyle,
@@ -544,6 +552,7 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".el": LispCommentStyle,
     ".erl": TexCommentStyle,
     ".ex": PythonCommentStyle,
+    ".exe": UncommentableCommentStyle,
     ".exs": PythonCommentStyle,
     ".f": FortranCommentStyle,
     ".f03": FortranCommentStyle,
@@ -558,10 +567,13 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".fs": CCommentStyle,
     ".ftl": FtlCommentStyle,
     ".gemspec": PythonCommentStyle,
+    ".gif": UncommentableCommentStyle,
     ".go": CCommentStyle,
     ".gradle": CCommentStyle,
     ".graphql": PythonCommentStyle,
     ".groovy": CCommentStyle,
+    ".gz": UncommentableCommentStyle,
+    ".gzip": UncommentableCommentStyle,
     ".h": CCommentStyle,
     ".ha": CCommentStyle,
     ".hbs": HandlebarsCommentStyle,
@@ -575,11 +587,15 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".hxsl": CCommentStyle,
     ".ini": LispCommentStyle,
     ".ino": CCommentStyle,
+    ".iso": UncommentableCommentStyle,
     ".ipynb": UncommentableCommentStyle,
     ".iuml": PlantUmlCommentStyle,
+    ".jar": UncommentableCommentStyle,
     ".java": CCommentStyle,
     ".jinja": JinjaCommentStyle,
     ".jinja2": JinjaCommentStyle,
+    ".jpeg": UncommentableCommentStyle,
+    ".jpg": UncommentableCommentStyle,
     ".js": CCommentStyle,
     ".json": UncommentableCommentStyle,
     ".jsp": AspxCommentStyle,
@@ -595,6 +611,8 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".lisp": LispCommentStyle,
     ".lsp": LispCommentStyle,
     ".lua": HaskellCommentStyle,
+    ".lz": UncommentableCommentStyle,
+    ".lzma": UncommentableCommentStyle,
     ".m4": M4CommentStyle,
     ".markdown": HtmlCommentStyle,
     ".md": HtmlCommentStyle,
@@ -607,6 +625,7 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".nimble": PythonCommentStyle,  # Nim-lang build config
     ".nimrod": PythonCommentStyle,
     ".nix": PythonCommentStyle,
+    ".o": UncommentableCommentStyle,
     ".odb": UncommentableCommentStyle,
     ".odf": UncommentableCommentStyle,
     ".odg": UncommentableCommentStyle,
@@ -626,6 +645,7 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".php5": CCommentStyle,
     ".pl": PythonCommentStyle,
     ".plantuml": PlantUmlCommentStyle,
+    ".png": UncommentableCommentStyle,
     ".po": PythonCommentStyle,
     ".pod": PythonCommentStyle,
     ".pot": PythonCommentStyle,
@@ -649,11 +669,13 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".qss": CssCommentStyle,
     ".R": PythonCommentStyle,
     ".rake": PythonCommentStyle,
+    ".rar": UncommentableCommentStyle,
     ".rb": PythonCommentStyle,
     ".rbw": PythonCommentStyle,
     ".rbx": PythonCommentStyle,
     ".rkt": LispCommentStyle,
     ".Rmd": HtmlCommentStyle,
+    ".rpm": UncommentableCommentStyle,
     ".rs": CCommentStyle,
     ".rss": HtmlCommentStyle,
     ".rst": ReStructedTextCommentStyle,
@@ -676,6 +698,7 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".svg": UncommentableCommentStyle,
     ".svelte": HtmlCommentStyle,
     ".swift": CCommentStyle,
+    ".tar": UncommentableCommentStyle,
     ".tex": TexCommentStyle,
     ".textile": HtmlCommentStyle,
     ".tf": PythonCommentStyle,
@@ -695,6 +718,8 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".vsh": CCommentStyle,  # V-Lang script
     ".vtl": VelocityCommentStyle,
     ".vue": HtmlCommentStyle,
+    ".webm": UncommentableCommentStyle,
+    ".webp": UncommentableCommentStyle,
     ".xls": UncommentableCommentStyle,
     ".xlsx": UncommentableCommentStyle,
     ".xml": HtmlCommentStyle,
@@ -706,8 +731,11 @@ EXTENSION_COMMENT_STYLE_MAP = {
     ".xsd": HtmlCommentStyle,
     ".xsh": PythonCommentStyle,
     ".xsl": HtmlCommentStyle,
+    ".xz": UncommentableCommentStyle,
     ".yaml": PythonCommentStyle,
     ".yml": PythonCommentStyle,
+    ".z": UncommentableCommentStyle,
+    ".zip": UncommentableCommentStyle,
     ".zsh": PythonCommentStyle,
 }
 
