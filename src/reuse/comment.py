@@ -867,6 +867,7 @@ FILENAME_COMMENT_STYLE_MAP = {
     ".Renviron": PythonCommentStyle,
     ".Rprofile": PythonCommentStyle,
     ".shellcheckrc": PythonCommentStyle,
+    ".style.yapf": PythonCommentStyle,  # is a TOML file
     ".taprc": PythonCommentStyle,
     ".vimrc": VimCommentStyle,
     ".zshrc": PythonCommentStyle,
